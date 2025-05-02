@@ -29,4 +29,20 @@ public class FindMaximum
         }
         return max;
     }
+
+    public String findStringMax(String s1,String s2,String s3)
+    {
+        String max=s1;
+
+        if(s2.compareTo(max)>0)
+        {
+            max=s2;
+        }
+        if(s3.compareTo(max)>0)
+        {
+            max=s3;
+        }
+
+        return  max;
+    }
 }
