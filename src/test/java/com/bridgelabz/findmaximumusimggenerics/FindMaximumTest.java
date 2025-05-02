@@ -145,14 +145,12 @@ class FindMaximumTest
         Float b = 100f;
         Float c = 900f;
         Float actualResult = findMaximum.findFloatMax(a, b, c);
-
         if (c.compareTo(a) > 0 && c.compareTo(b) > 0) {
 
             assertEquals(c, actualResult);
 
             System.out.println("TC 1.3 - Inputs: a = " + a + ", b = " + b + ", c = " + c);
             System.out.println("Maximum value found: " + actualResult);
-
         } else {
             fail("Test data invalid: third number is not the maximum.");
         }
