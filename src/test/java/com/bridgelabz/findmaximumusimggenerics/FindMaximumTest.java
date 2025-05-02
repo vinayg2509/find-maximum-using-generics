@@ -12,7 +12,7 @@ class FindMaximumTest
     @Test
     public void findIntegerMax()
     {
-        Integer actualResult= findMaximum .findIntegerMax(10,40,30);
+        Integer actualResult= findMaximum.findIntegerMax(10,40,30);
         assertEquals(40,actualResult);
 
         System.out.println("Maximum value found: " + actualResult);
@@ -87,7 +87,7 @@ class FindMaximumTest
 
     public void findFloatMax()
     {
-        Float actualResult= findMaximum .findFloatMax(10.0f,40.9f,30.3f);
+        Float actualResult= findMaximum.findFloatMax(10.0f,40.9f,30.3f);
         assertEquals(40.9f,actualResult);
 
         System.out.println("Maximum value found: " + actualResult);
