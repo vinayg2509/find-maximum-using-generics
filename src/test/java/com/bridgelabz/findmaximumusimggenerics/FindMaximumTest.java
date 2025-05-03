@@ -26,8 +26,6 @@ class FindMaximumTest
         String s3="apple";
         String actualResult=findMaximum.findStringMax(s1,s2,s3);
         assertEquals(s1,actualResult,"Test data invalid: first string  is not the maximum string");
-
-
     }
 
     //TC 1.2 Max in second position
