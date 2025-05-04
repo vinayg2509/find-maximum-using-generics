@@ -13,7 +13,7 @@ class FindMaximumTest
         assertEquals(650,actualResult);
 
     }
-:
+
     @Test
     public void findFloatMax()
     {
