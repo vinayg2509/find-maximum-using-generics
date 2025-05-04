@@ -1,29 +1,31 @@
 package com.bridgelabz.findmaximumusimggenerics;
 
-class FindMaximum<E extends Comparable<E>> {
+import java.util.Arrays;
+import java.util.Optional;
 
-    E a, b, c;
+import static java.time.chrono.JapaneseEra.values;
 
-     FindMaximum(E a, E b, E c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
+class FindMaximum<E extends Comparable<E>>
+{
 
-    // Instance method that uses static generic method
-    public E testMaximum() {
-        return FindMaximum.findMax(a, b, c);
-    }
-
-    // Static generic method to find max of 3 values
-    public static <E extends Comparable<E>> E findMax(E a, E b, E c) {
-        E max = a;
-        if (b.compareTo(max) > 0) {
-            max = b;
+    // Static generic method to find max of variable argumnet
+    @SafeVarargs
+    public static <E extends Comparable<E>> Comparable<E>findMax(E... values)
+    {
+        if (values == null || values.length == 0)
+        {
+            throw new IllegalArgumentException("At least one value required");
         }
-        if (c.compareTo(max) > 0) {
-            max = c;
+
+       Comparable max = values[0];
+        for (Comparable val : values)
+        {
+            if (val.compareTo(max) > 0)
+            {
+                max = val;
+            }
         }
         return max;
+
     }
 }
