@@ -1,60 +1,28 @@
 package com.bridgelabz.findmaximumusimggenerics;
 
-public class FindMaximum
-{
-    public  Integer findIntegerMax(Integer num1,Integer num2,Integer num3)
-    {
-        Integer max=num1;
-        if(num2.compareTo(max)>0)
-        {
-            max=num2;
-        }
-        if(num3.compareTo(max)>0)
-        {
-            max=num3;
-        }
-        return max;
+class FindMaximum<E extends Comparable<E>> {
+
+    E a, b, c;
+
+     FindMaximum(E a, E b, E c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
-    public  Float findFloatMax(Float num1,Float num2,Float num3)
-    {
-        Float max=num1;
-        if(num2.compareTo(max)>0)
-        {
-            max=num2;
-        }
-        if(num3.compareTo(max)>0)
-        {
-            max=num3;
-        }
-        return max;
+    // Instance method that uses static generic method
+    public E testMaximum() {
+        return FindMaximum.findMax(a, b, c);
     }
 
-    public String findStringMax(String s1,String s2,String s3)
-    {
-        String max=s1;
-
-        if(s2.compareTo(max)>0)
-        {
-            max=s2;
+    // Static generic method to find max of 3 values
+    public static <E extends Comparable<E>> E findMax(E a, E b, E c) {
+        E max = a;
+        if (b.compareTo(max) > 0) {
+            max = b;
         }
-        if(s3.compareTo(max)>0)
-        {
-            max=s3;
-        }
-
-        return  max;
-    }
-        public <E extends Comparable > Comparable findGenericsMax(E a,E b, E c)
-    {
-        E max =a;
-        if(b.compareTo(max)>0)
-        {
-            max=b;
-        }
-        if(c.compareTo(max)>0)
-        {
-            max=c;
+        if (c.compareTo(max) > 0) {
+            max = c;
         }
         return max;
     }

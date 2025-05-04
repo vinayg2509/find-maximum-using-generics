@@ -1,34 +1,36 @@
 package com.bridgelabz.findmaximumusimggenerics;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class FindMaximumTest
 {
 
-    FindMaximum findMaximum= new FindMaximum();
-
-    //Method to find Max string
     @Test
-    public  void findIntegerMax()
+    public void findIntegerMax()
     {
-       Comparable actualResult=  findMaximum.findGenericsMax(100,400,300);
-       assertEquals(400,actualResult);
+        FindMaximum findMaximum=new FindMaximum(10,40,60);
+        Comparable actualResult= findMaximum.testMaximum();
+        assertEquals(60,actualResult);
     }
 
     @Test
-    public  void findFloatMax()
+    public void findFloatMax()
     {
-        Comparable actualResult= findMaximum.findGenericsMax(100.0f,400.8f,300.7f);
-        assertEquals(400.8f,actualResult);
+        FindMaximum findMaximum=new FindMaximum(10.88f,40.0f,60.8f);
+        Comparable actualResult= findMaximum.testMaximum();
+        assertEquals(60.8f,actualResult);
     }
 
     @Test
-    public  void findStringMax()
+    public void findStringMax()
     {
-        Comparable actualResult= findMaximum.findGenericsMax("100","200","300");
-        assertEquals("300",actualResult);
+        String a="apple";
+        String b="Apple";
+        String c="banana";
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
+        assertEquals(c,actualResult);
     }
 
     // TC 1.1: Max at 1st position
@@ -38,7 +40,8 @@ class FindMaximumTest
         Integer a=400;
         Integer b=00;
         Integer c=90;
-        Comparable actualResult= findMaximum.findGenericsMax(a,b,c);
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
         assertEquals(a,actualResult,"Test data invalid: first number is not the maximum.");
     }
 
@@ -46,10 +49,11 @@ class FindMaximumTest
     @Test
     public void findIntegerMaxAtSecondPosition()
     {
-        Integer a = 40;
-        Integer b = 100;
-        Integer c = 9;
-        Comparable actualResult = findMaximum.findGenericsMax(a, b, c);
+        Integer a=400;
+        Integer b=1000;
+        Integer c=90;
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
         assertEquals(b,actualResult,"Test data invalid: second number is not the maximum.");
     }
     // TC 1.3: Max at 3rd position
@@ -59,7 +63,8 @@ class FindMaximumTest
         Integer a = 40;
         Integer b = 100;
         Integer c = 900;
-        Comparable actualResult = findMaximum.findGenericsMax(a, b, c);
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
         assertEquals(c,actualResult,"Test data invalid: third number is not the maximum.");
     }
 
@@ -70,7 +75,8 @@ class FindMaximumTest
         Float a=400.0f;
         Float b=00.5f;
         Float c=90.f;
-        Comparable actualResult= findMaximum.findGenericsMax(a,b,c);
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
         assertEquals(a,actualResult,"Test data invalid: first number is not the maximum.");
     }
 
@@ -78,12 +84,11 @@ class FindMaximumTest
     @Test
     public void findFloatMaxAtSecondPosition()
     {
-
-
         Float a = 40f;
         Float b = 100f;
         Float c = 9f;
-        Comparable actualResult = findMaximum.findGenericsMax(a, b, c);
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
         assertEquals(b,actualResult,"Test data invalid: second number is not the maximum.");
 
     }
@@ -95,7 +100,8 @@ class FindMaximumTest
         Float a = 40f;
         Float b = 100f;
         Float c = 900f;
-        Comparable actualResult = findMaximum.findGenericsMax(a, b, c);
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
         assertEquals(c,actualResult,"Test data invalid: third number is not the maximum.");
 
     }
@@ -104,34 +110,35 @@ class FindMaximumTest
     @Test
     public  void findStringMaxAtFirstPosition()
     {
-        String s1="banana";
-        String s2="Apple";
-        String s3="apple";
-        Comparable actualResult=findMaximum.findGenericsMax(s1,s2,s3);
-        assertEquals(s1,actualResult,"Test data invalid: first string  is not the maximum string");
+        String a="banana";
+        String b="Apple";
+        String c="apple";
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
+        assertEquals(a,actualResult,"Test data invalid: first string  is not the maximum string");
     }
 
     //TC 1.2 Max in second position
     @Test
     public  void findStringMaxAtSecondPosition()
     {
-        String s1="Dog";
-        String s2="dog";
-        String s3="App";
-        Comparable actualResult=findMaximum.findGenericsMax(s1,s2,s3);
-        assertEquals(s2,actualResult,"Test data invalid: second string  is not the maximum string");
-
+        String a="banana";
+        String b="peach";
+        String c="apple";
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
+        assertEquals(b,actualResult,"Test data invalid: second string  is not the maximum string");
     }
 
     //TC 1.3 Max in third position
     @Test
     public  void findStringMaxAtThirdPosition()
     {
-        String s1="apple";
-        String s2="banana";
-        String s3="peach";
-        Comparable actualResult=findMaximum.findGenericsMax(s1,s2,s3);
-        assertEquals(s3,actualResult,"Test data invalid: third string  is not the maximum string");
+        String a="banana";
+        String b="peach";
+        String c="strawberry";
+        FindMaximum findMaximum=new FindMaximum(a,b,c);
+        Comparable actualResult= findMaximum.testMaximum();
+        assertEquals(c,actualResult,"Test data invalid: third string  is not the maximum string");
     }
-
 }
