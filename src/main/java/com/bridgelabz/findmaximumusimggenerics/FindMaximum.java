@@ -1,12 +1,23 @@
 package com.bridgelabz.findmaximumusimggenerics;
 
-import java.util.Arrays;
-import java.util.Optional;
-
-import static java.time.chrono.JapaneseEra.values;
-
 class FindMaximum<E extends Comparable<E>>
 {
+
+    E[] values;
+
+    @SafeVarargs
+    FindMaximum(E...values)
+    {
+        this.values=values;
+    }
+
+
+    public E printMax(E max)
+    {
+        System.out.println("Maximum value is: " + max);
+        return max;
+    }
+
 
     // Static generic method to find max of variable argumnet
     @SafeVarargs
